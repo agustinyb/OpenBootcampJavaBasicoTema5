@@ -1,0 +1,30 @@
+public class Main {
+    public static void main(String[] args) {
+
+    CocheCRUD cocheCrud = new CocheCRUDimpl();
+
+        System.out.println("Añadimos coche");
+        cocheCrud.añadir(new Coche(0,"Honda Fit"));
+        cocheCrud.añadir(new Coche(1,"Hyundai Genesis"));
+
+        System.out.println("Leemos el coche");
+        System.out.println(cocheCrud.leer(0).toString());
+        System.out.println(cocheCrud.leer(1).toString());
+
+        System.out.println("Borrar un Vehiculo");
+        cocheCrud.borrar(1);
+
+        try {
+            System.out.println(cocheCrud.leer(1).toString());
+        }catch (Exception e) {
+            System.out.println("El vehiculo no se encuentra en la base de datos");
+        }
+
+        System.out.println("Modificar un vehiculo");
+        System.out.println("Sin modificar: "+cocheCrud.leer(0).toString());
+        if (cocheCrud.actualizar(0,"Aston Martin"))
+            System.out.println("Modificado: "+cocheCrud.leer(0).toString());
+        else
+            System.out.println("No se ha podido modificar: ");
+    }
+}
