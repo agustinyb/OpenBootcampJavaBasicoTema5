@@ -1,0 +1,14 @@
+import java.util.List;
+
+public interface CocheCRUD {
+
+Coche coche = null;
+    public void añadir(Coche cocheNuevo);
+
+    public Coche leer (int ID);
+
+    public  void borrar(int ID);
+
+public boolean actualizar (int ID, String nombreNuevo);
+
+}
