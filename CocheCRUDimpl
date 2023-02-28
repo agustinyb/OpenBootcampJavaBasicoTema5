@@ -1,0 +1,33 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class CocheCRUDimpl implements CocheCRUD {
+
+ArrayList<Coche> listaCoches = new ArrayList<>();
+
+public void añadir(Coche cocheNuevo) {
+    listaCoches.add(cocheNuevo);
+
+}
+
+public Coche leer (int ID) {
+    return listaCoches.get (ID);
+}
+
+public void borrar (int ID) {
+    listaCoches.remove(ID);
+}
+
+public boolean actualizar (int ID, String nombreNuevo) {
+    if (listaCoches.get(ID) != null) {
+        listaCoches.get(ID).setNombre(nombreNuevo);
+        return true;
+    }
+    else return false;
+
+
+}
+
+
+}
+
